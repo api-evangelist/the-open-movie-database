@@ -1,0 +1,114 @@
+{
+    "id": "94a9c3b2cb7138a24b5120f869836470",
+    "name": "OMDb",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "e0d387b1d92a5da795fdd0285af94166",
+            "name": "OMDb Search",
+            "url": "httpswww.omdbapi.com\/\/",
+            "description": "Find a movie, series or episode from the OMDb by title, IMDb-id or by free-text search",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "t",
+                    "description": "Movie title to search for. One of t, i or s is required.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "i",
+                    "description": "A valid IMDb ID (e.g. tt1285016). One of t, i or s is required.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "s",
+                    "description": "Movie title to search for. One of t, i or s is required.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "y",
+                    "description": "Year of release.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "type",
+                    "description": "Type of result to return.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "plot",
+                    "description": "Return short or full plot.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "tomatoes",
+                    "description": "Include Rotten Tomatoes ratings.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "r",
+                    "description": "The data type to return.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "v",
+                    "description": "API version (reserved for future use).",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "page",
+                    "description": "Page number to return.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "callback",
+                    "description": "JSONP callback name.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "94a9c3b2cb7138a24b5120f869836470",
+            "rawModeData": ""
+        }
+    ]
+}
