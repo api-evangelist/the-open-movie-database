@@ -1,0 +1,88 @@
+{
+    "name": "The Open Movie Database",
+    "description": "<p>The OMDb API is a free web service to obtain movie information, all content and images on the site are contributed and maintained by our users.<\/p>",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/logos\/omdb-api-logo.png",
+    "tags": [
+        "general data",
+        "have api",
+        "have swagger",
+        "profile"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/the-open-movie-database\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "The Open Movie Database",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/logos\/omdb-api-logo.png",
+            "humanURL": "http:\/\/www.omdbapi.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/the-open-movie-database.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/the-open-movie-database-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/the-open-movie-database-postman-collection.json"
+                }
+            ]
+        },
+        {
+            "name": "OMDb",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/logos\/omdb-api-logo.png",
+            "humanURL": "http:\/\/www.omdbapi.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/omdb.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/omdb-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/omdb-postman-collection.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/11534-2019-09-03-16-23-31.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/11534-2019-09-04-01-31-59.json"
+        },
+        {
+            "type": "Registration",
+            "url": "http:\/\/beforethecode.com\/projects\/omdb\/apikey.aspx"
+        },
+        {
+            "type": "Website",
+            "url": "http:\/\/omdbapi.com"
+        },
+        {
+            "type": "Website",
+            "url": "http:\/\/www.omdbapi.com\/"
+        },
+        {
+            "type": "Website",
+            "url": "http:\/\/www.omdbapi.com"
+        }
+    ]
+}
