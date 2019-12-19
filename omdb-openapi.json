@@ -1,0 +1,240 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1",
+        "title": "OMDb",
+        "description": "The Open Movie Database. The OMDb API is a free web service to obtain movie information, all content and images on the site are contributed and maintained by our users.",
+        "termsOfService": "http:\/\/www.omdbapi.com\/legal.htm"
+    },
+    "servers": [
+        "httpswww.omdbapi.com\/"
+    ],
+    "paths": {
+        "\/": {
+            "get": {
+                "summary": "OMDb Search",
+                "description": "Find a movie, series or episode from the OMDb by title, IMDb-id or by free-text search",
+                "operationId": "GetMovies",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "t",
+                        "in": "query",
+                        "description": "Movie title to search for. One of t, i or s is required."
+                    },
+                    {
+                        "name": "i",
+                        "in": "query",
+                        "description": "A valid IMDb ID (e.g. tt1285016). One of t, i or s is required."
+                    },
+                    {
+                        "name": "s",
+                        "in": "query",
+                        "description": "Movie title to search for. One of t, i or s is required."
+                    },
+                    {
+                        "name": "y",
+                        "in": "query",
+                        "description": "Year of release."
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "Type of result to return."
+                    },
+                    {
+                        "name": "plot",
+                        "in": "query",
+                        "description": "Return short or full plot."
+                    },
+                    {
+                        "name": "tomatoes",
+                        "in": "query",
+                        "description": "Include Rotten Tomatoes ratings."
+                    },
+                    {
+                        "name": "r",
+                        "in": "query",
+                        "description": "The data type to return."
+                    },
+                    {
+                        "name": "v",
+                        "in": "query",
+                        "description": "API version (reserved for future use)."
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Page number to return."
+                    },
+                    {
+                        "name": "callback",
+                        "in": "query",
+                        "description": "JSONP callback name."
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "combinedResult": {
+                "type": "object",
+                "properties": {
+                    "Actors": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "Awards": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "BoxOffice": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "Country": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "DVD": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "Director": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "Genre": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "Language": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "Metascore": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "Plot": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "Poster": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "Production": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "Rated": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "Released": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "Response": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "Runtime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "Search": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "Title": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "Type": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "Website": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "Writer": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "Year": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "imdbID": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "imdbRating": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "imdbVotes": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tomatoConsensus": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tomatoFresh": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tomatoImage": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tomatoMeter": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tomatoRating": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tomatoReviews": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tomatoRotten": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tomatoURL": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tomatoUserMeter": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tomatoUserRating": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tomatoUserReviews": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "totalResults": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "totalSeasons": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            }
+        }
+    }
+}
