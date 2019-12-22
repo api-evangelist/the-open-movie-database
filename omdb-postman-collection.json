@@ -1,5 +1,5 @@
 {
-    "id": "94a9c3b2cb7138a24b5120f869836470",
+    "id": "11dabf3af08873c0264cb64e58cfa21d",
     "name": "OMDb",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "e0d387b1d92a5da795fdd0285af94166",
+            "id": "86c375d734e53a59a033db9262eb7591",
             "name": "OMDb Search",
             "url": "httpswww.omdbapi.com\/\/",
             "description": "Find a movie, series or episode from the OMDb by title, IMDb-id or by free-text search",
@@ -107,7 +107,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "94a9c3b2cb7138a24b5120f869836470",
+            "collectionId": "11dabf3af08873c0264cb64e58cfa21d",
             "rawModeData": ""
         }
     ]
