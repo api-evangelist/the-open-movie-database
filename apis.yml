@@ -8,9 +8,9 @@ position: Consumer
 access: 3rd-Party
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
+  - Entertainment
   - Movies
   - Television
-  - Entertainment
 created: '2025-03-01'
 modified: '2026-03-16'
 url: >-
@@ -26,9 +26,9 @@ apis:
     humanURL: https://www.omdbapi.com/
     baseURL: https://www.omdbapi.com
     tags:
+      - Entertainment
       - Movies
       - Television
-      - Entertainment
     properties:
       - type: Documentation
         url: https://www.omdbapi.com/
