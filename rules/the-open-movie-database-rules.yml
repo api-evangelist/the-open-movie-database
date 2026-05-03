@@ -1,0 +1,83 @@
+rules:
+  omdb-api-key-security:
+    description: All operations must require the apiKey query parameter security scheme.
+    message: "Operation '{{operationId}}' is missing apiKey security requirement."
+    severity: error
+    given: "$.paths[*][get,post,put,delete,patch]"
+    then:
+      - field: security
+        function: truthy
+
+  omdb-operation-summary:
+    description: Every operation must have a non-empty summary.
+    message: "Operation '{{operationId}}' is missing a summary."
+    severity: error
+    given: "$.paths[*][get,post,put,delete,patch]"
+    then:
+      - field: summary
+        function: truthy
+
+  omdb-title-case-summary:
+    description: Operation summaries must use Title Case.
+    message: "Summary '{{value}}' should be in Title Case."
+    severity: warn
+    given: "$.paths[*][get,post,put,delete,patch].summary"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[A-Z][^a-z]*([A-Z][^A-Z]*)*"
+
+  omdb-operation-tags:
+    description: Every operation must have at least one tag.
+    message: "Operation '{{operationId}}' must include at least one tag."
+    severity: warn
+    given: "$.paths[*][get,post,put,delete,patch]"
+    then:
+      - field: tags
+        function: truthy
+
+  omdb-200-response:
+    description: Every operation must define a 200 response.
+    message: "Operation '{{operationId}}' is missing a 200 response."
+    severity: error
+    given: "$.paths[*][get,post,put,delete,patch].responses"
+    then:
+      - field: "200"
+        function: truthy
+
+  omdb-https-servers:
+    description: All server URLs must use HTTPS.
+    message: "Server URL '{{value}}' must use HTTPS."
+    severity: error
+    given: "$.servers[*].url"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^https://"
+
+  omdb-parameter-descriptions:
+    description: All parameters must include a description.
+    message: "Parameter '{{value}}' is missing a description."
+    severity: warn
+    given: "$.paths[*][*].parameters[*]"
+    then:
+      - field: description
+        function: truthy
+
+  omdb-schema-descriptions:
+    description: All schema objects in components should have a description.
+    message: "Schema '{{path}}' is missing a description."
+    severity: info
+    given: "$.components.schemas[*]"
+    then:
+      - field: description
+        function: truthy
+
+  omdb-operation-id:
+    description: Every operation must define an operationId.
+    message: "Operation at '{{path}}' is missing an operationId."
+    severity: error
+    given: "$.paths[*][get,post,put,delete,patch]"
+    then:
+      - field: operationId
+        function: truthy

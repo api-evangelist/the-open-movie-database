@@ -1,0 +1,134 @@
+vocabulary: the-open-movie-database
+description: >-
+  Vocabulary and taxonomy for The Open Movie Database (OMDb) API covering movie
+  metadata fields, content types, rating sources, and API parameters.
+version: "1.0"
+created: "2026-05-03"
+modified: "2026-05-03"
+
+domains:
+  - name: Content Types
+    description: Types of content available through the OMDb API.
+    terms:
+      - term: movie
+        definition: "A feature film released theatrically or direct-to-video."
+      - term: series
+        definition: "A TV series with one or more seasons."
+        aliases: ["TV series", "television series", "show"]
+      - term: episode
+        definition: "A single episode within a TV series season."
+        aliases: ["TV episode"]
+
+  - name: Lookup Parameters
+    description: Parameters used to identify and retrieve content.
+    terms:
+      - term: i
+        definition: "IMDb ID parameter (e.g., tt0468569). The unique identifier assigned by IMDb to each title."
+      - term: t
+        definition: "Title parameter. The movie or series title to look up. Either 'i' or 't' is required."
+      - term: s
+        definition: "Search parameter. A keyword or partial title used to search the OMDb catalog."
+      - term: Season
+        definition: "Season number parameter. Integer specifying which TV season to retrieve."
+      - term: Episode
+        definition: "Episode number parameter. Integer used with Season to retrieve a specific episode."
+      - term: y
+        definition: "Year parameter. Filters results to a specific release year."
+      - term: plot
+        definition: "Plot length parameter. Values: 'short' (default) or 'full'."
+      - term: type
+        definition: "Content type filter. Values: movie, series, episode."
+
+  - name: Movie Metadata Fields
+    description: Fields returned in the movie/series/episode detail response.
+    terms:
+      - term: Title
+        definition: "The title of the movie, series, or episode."
+      - term: Year
+        definition: "Release year. For series, may be a range (e.g., 2010-2015)."
+      - term: Rated
+        definition: "Content rating assigned by the MPAA or equivalent (e.g., PG-13, R, TV-MA, NR, N/A)."
+      - term: Released
+        definition: "Theatrical release or air date as a formatted string (e.g., 18 Jul 2008)."
+      - term: Runtime
+        definition: "Film duration in minutes (e.g., 152 min)."
+      - term: Genre
+        definition: "Comma-separated list of genres assigned to the title."
+      - term: Director
+        definition: "Name(s) of the director(s)."
+      - term: Writer
+        definition: "Name(s) of the screenwriter(s) or story author(s)."
+      - term: Actors
+        definition: "Comma-separated list of principal cast members."
+      - term: Plot
+        definition: "Short or full plot summary depending on the plot request parameter."
+      - term: Language
+        definition: "Languages spoken in the film."
+      - term: Country
+        definition: "Country or countries where the film was produced."
+      - term: Awards
+        definition: "Awards won and nomination counts (e.g., Won 2 Oscars. 159 wins & 163 nominations)."
+      - term: Poster
+        definition: "URL pointing to the movie poster image hosted on Amazon's media CDN."
+      - term: imdbID
+        definition: "IMDb unique identifier. Always in the format tt followed by 7-8 digits (e.g., tt0468569)."
+      - term: Type
+        definition: "Content type: movie, series, or episode."
+      - term: Response
+        definition: "API response status. 'True' for successful lookups, 'False' for errors."
+
+  - name: Ratings Sources
+    description: Third-party rating sources aggregated by OMDb.
+    terms:
+      - term: Internet Movie Database
+        definition: "IMDb user rating on a 0-10 scale based on registered user votes."
+        aliases: ["IMDb", "imdbRating"]
+      - term: Rotten Tomatoes
+        definition: "Tomatometer score — percentage of approved critics who gave a positive review."
+        aliases: ["RT", "Tomatometer"]
+      - term: Metacritic
+        definition: "Metascore — weighted average of critic reviews on a 0-100 scale."
+        aliases: ["Metascore"]
+
+  - name: Series and Episode Fields
+    description: Fields specific to TV series and episode responses.
+    terms:
+      - term: totalSeasons
+        definition: "Total number of seasons in a TV series."
+      - term: seriesID
+        definition: "IMDb ID of the parent series for an individual episode."
+      - term: Season
+        definition: "Season number in the series (returned for episode responses)."
+      - term: Episode
+        definition: "Episode number within the season (returned for episode responses)."
+
+  - name: Commercial Fields
+    description: Box office and distribution metadata fields.
+    terms:
+      - term: BoxOffice
+        definition: "US domestic theatrical gross revenue (e.g., $534,858,444)."
+      - term: DVD
+        definition: "Home video DVD release date."
+      - term: Production
+        definition: "Production company or studio that produced the title."
+      - term: Website
+        definition: "Official promotional website URL, or N/A if not available."
+
+  - name: Search Response Fields
+    description: Fields returned in search result listings.
+    terms:
+      - term: Search
+        definition: "Array of matching results returned from a title search."
+      - term: totalResults
+        definition: "Total number of results matching the search query across all pages."
+      - term: page
+        definition: "Pagination parameter. Each page returns up to 10 results. Valid range: 1-100."
+
+tags:
+  - Movies
+  - Television
+  - IMDb
+  - Ratings
+  - Entertainment
+  - Metadata
+  - Search

@@ -1,0 +1,35 @@
+name: Movie Lookup
+version: 1.0.0-alpha1
+description: >-
+  Workflow capability for discovering and retrieving movie, series, and episode
+  information using The Open Movie Database (OMDb) API. Supports title search,
+  direct IMDb ID lookups, TV season/episode retrieval, and access to aggregated
+  ratings from IMDb, Rotten Tomatoes, and Metacritic.
+tags:
+  - Entertainment
+  - Movies
+  - Television
+  - IMDb
+  - Metadata
+
+adapters:
+  rest:
+    port: 8080
+    type: rest
+  mcp:
+    port: 9090
+    type: mcp
+
+apis:
+  - name: The Open Movie Database API
+    shared: capabilities/shared/the-open-movie-database.yaml
+    operations:
+      - operationId: searchMovies
+        description: >-
+          Search for movies, series, or episodes by title keyword. Returns
+          paginated results with title, year, IMDb ID, type, and poster URL.
+      - operationId: getMovie
+        description: >-
+          Retrieve full metadata for a specific movie, TV series, or episode
+          using IMDb ID or exact title. Returns cast, crew, plot, ratings,
+          box office, and more.

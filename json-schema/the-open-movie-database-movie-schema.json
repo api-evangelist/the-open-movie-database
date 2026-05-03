@@ -1,0 +1,144 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/the-open-movie-database/main/json-schema/the-open-movie-database-movie-schema.json",
+  "title": "OMDb Movie",
+  "description": "Detailed metadata for a movie, TV series, or episode returned by the OMDb API.",
+  "type": "object",
+  "required": ["Title", "imdbID", "Response"],
+  "properties": {
+    "Title": {
+      "type": "string",
+      "description": "Title of the movie or series."
+    },
+    "Year": {
+      "type": "string",
+      "description": "Release year or year range for series (e.g., 2010 or 2010-2014)."
+    },
+    "Rated": {
+      "type": "string",
+      "description": "MPAA content rating (e.g., PG-13, R, TV-MA, N/A)."
+    },
+    "Released": {
+      "type": "string",
+      "description": "Theatrical or air release date (e.g., 20 Oct 2010)."
+    },
+    "Runtime": {
+      "type": "string",
+      "description": "Runtime in minutes (e.g., 148 min)."
+    },
+    "Genre": {
+      "type": "string",
+      "description": "Comma-separated list of genres."
+    },
+    "Director": {
+      "type": "string",
+      "description": "Director name(s)."
+    },
+    "Writer": {
+      "type": "string",
+      "description": "Writer name(s)."
+    },
+    "Actors": {
+      "type": "string",
+      "description": "Comma-separated list of main cast members."
+    },
+    "Plot": {
+      "type": "string",
+      "description": "Short or full plot summary."
+    },
+    "Language": {
+      "type": "string",
+      "description": "Language(s) of the film."
+    },
+    "Country": {
+      "type": "string",
+      "description": "Country or countries of production."
+    },
+    "Awards": {
+      "type": "string",
+      "description": "Awards won or nominated for."
+    },
+    "Poster": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to the movie poster image."
+    },
+    "Ratings": {
+      "type": "array",
+      "description": "Array of ratings from multiple sources.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Source": {
+            "type": "string",
+            "description": "Rating source name (e.g., Internet Movie Database, Rotten Tomatoes, Metacritic)."
+          },
+          "Value": {
+            "type": "string",
+            "description": "Rating value (e.g., 8.5/10, 92%, 75/100)."
+          }
+        },
+        "required": ["Source", "Value"]
+      }
+    },
+    "Metascore": {
+      "type": "string",
+      "description": "Metacritic score (0-100) or N/A."
+    },
+    "imdbRating": {
+      "type": "string",
+      "description": "IMDb user rating (0-10) or N/A."
+    },
+    "imdbVotes": {
+      "type": "string",
+      "description": "Number of IMDb user votes."
+    },
+    "imdbID": {
+      "type": "string",
+      "pattern": "^tt\\d{7,8}$",
+      "description": "IMDb identifier (e.g., tt1285016)."
+    },
+    "Type": {
+      "type": "string",
+      "enum": ["movie", "series", "episode"],
+      "description": "Content type."
+    },
+    "DVD": {
+      "type": "string",
+      "description": "DVD release date."
+    },
+    "BoxOffice": {
+      "type": "string",
+      "description": "Box office earnings (US)."
+    },
+    "Production": {
+      "type": "string",
+      "description": "Production company name."
+    },
+    "Website": {
+      "type": "string",
+      "description": "Official website URL or N/A."
+    },
+    "totalSeasons": {
+      "type": "string",
+      "description": "Total number of seasons (series only)."
+    },
+    "seriesID": {
+      "type": "string",
+      "description": "IMDb ID of the parent series (episode only)."
+    },
+    "Season": {
+      "type": "string",
+      "description": "Season number (episode only)."
+    },
+    "Episode": {
+      "type": "string",
+      "description": "Episode number within the season (episode only)."
+    },
+    "Response": {
+      "type": "string",
+      "enum": ["True", "False"],
+      "description": "API response status."
+    }
+  }
+}

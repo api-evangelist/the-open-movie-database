@@ -1,0 +1,37 @@
+name: The Open Movie Database API
+version: 1.0.0-alpha1
+description: >-
+  Shared per-API capability definition for The Open Movie Database (OMDb) API.
+  Provides movie, series, and episode lookup by IMDb ID or title, plus full-text
+  search across the OMDb catalog.
+api: the-open-movie-database:the-open-movie-database
+openapi: openapi/the-open-movie-database-openapi.yml
+
+adapters:
+  rest:
+    port: 8100
+    type: rest
+  mcp:
+    port: 9100
+    type: mcp
+
+operations:
+  - operationId: getMovie
+    summary: Get Movie By Title Or IMDb ID
+    description: >-
+      Retrieve detailed information about a single movie, TV series, or episode
+      by IMDb ID or title. Supports Season and Episode parameters for TV content.
+    method: GET
+    path: /
+    tags:
+      - Movies
+
+  - operationId: searchMovies
+    summary: Search Movies By Title
+    description: >-
+      Search for movies, series, or episodes by title. Returns a paginated list
+      of matching results with basic metadata.
+    method: GET
+    path: /search
+    tags:
+      - Search

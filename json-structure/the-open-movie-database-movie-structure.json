@@ -1,0 +1,45 @@
+{
+  "structure": "the-open-movie-database-movie",
+  "description": "JSON structure for a movie, TV series, or episode as returned by the OMDb API.",
+  "fields": [
+    { "name": "Title", "type": "string", "description": "Movie or series title." },
+    { "name": "Year", "type": "string", "description": "Release year or year range." },
+    { "name": "Rated", "type": "string", "description": "MPAA or TV content rating." },
+    { "name": "Released", "type": "string", "description": "Release date string." },
+    { "name": "Runtime", "type": "string", "description": "Runtime in minutes." },
+    { "name": "Genre", "type": "string", "description": "Comma-separated genres." },
+    { "name": "Director", "type": "string", "description": "Director name(s)." },
+    { "name": "Writer", "type": "string", "description": "Writer name(s)." },
+    { "name": "Actors", "type": "string", "description": "Main cast members." },
+    { "name": "Plot", "type": "string", "description": "Plot summary." },
+    { "name": "Language", "type": "string", "description": "Film language(s)." },
+    { "name": "Country", "type": "string", "description": "Country of production." },
+    { "name": "Awards", "type": "string", "description": "Awards won or nominated." },
+    { "name": "Poster", "type": "string", "description": "Poster image URL." },
+    {
+      "name": "Ratings",
+      "type": "array",
+      "description": "Ratings from multiple sources.",
+      "items": {
+        "fields": [
+          { "name": "Source", "type": "string", "description": "Rating source name." },
+          { "name": "Value", "type": "string", "description": "Rating value." }
+        ]
+      }
+    },
+    { "name": "Metascore", "type": "string", "description": "Metacritic score." },
+    { "name": "imdbRating", "type": "string", "description": "IMDb rating (0-10)." },
+    { "name": "imdbVotes", "type": "string", "description": "IMDb vote count." },
+    { "name": "imdbID", "type": "string", "description": "IMDb identifier." },
+    { "name": "Type", "type": "string", "description": "movie, series, or episode." },
+    { "name": "DVD", "type": "string", "description": "DVD release date." },
+    { "name": "BoxOffice", "type": "string", "description": "US box office earnings." },
+    { "name": "Production", "type": "string", "description": "Production company." },
+    { "name": "Website", "type": "string", "description": "Official website URL." },
+    { "name": "totalSeasons", "type": "string", "description": "Total seasons (series only)." },
+    { "name": "seriesID", "type": "string", "description": "Parent series IMDb ID (episode only)." },
+    { "name": "Season", "type": "string", "description": "Season number (episode only)." },
+    { "name": "Episode", "type": "string", "description": "Episode number (episode only)." },
+    { "name": "Response", "type": "string", "description": "True or False." }
+  ]
+}
