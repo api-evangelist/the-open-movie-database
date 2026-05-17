@@ -41,7 +41,7 @@ apis:
         url: https://www.omdbapi.com/
       - type: OpenAPI
         url: openapi/the-open-movie-database-openapi.yml
-      - type: Sign Up
+      - type: SignUp
         url: https://www.omdbapi.com/apikey.aspx
       - type: Spectral Rules
         url: rules/the-open-movie-database-rules.yml
@@ -53,7 +53,7 @@ apis:
         url: json-schema/the-open-movie-database-movie-schema.json
       - type: JSON Structure
         url: json-structure/the-open-movie-database-movie-structure.json
-      - type: JSON-LD
+      - type: JSONLD
         url: json-ld/the-open-movie-database-context.jsonld
       - type: Example
         url: examples/the-open-movie-database-get-movie-example.json
@@ -64,9 +64,9 @@ common:
     url: https://www.omdbapi.com/
   - type: Documentation
     url: https://www.omdbapi.com/
-  - type: Sign Up
+  - type: SignUp
     url: https://www.omdbapi.com/apikey.aspx
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://www.omdbapi.com/legal.htm
 maintainers:
   - FN: Kin Lane
