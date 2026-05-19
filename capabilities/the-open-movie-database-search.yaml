@@ -1,0 +1,119 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: The Open Movie Database API — Search
+  description: 'The Open Movie Database API — Search. 1 operations. Lead operation: Search Movies By Title. Self-contained
+    Naftiko capability covering one The Open Movie Database business surface.'
+  tags:
+  - The Open Movie Database
+  - Search
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    THE_OPEN_MOVIE_DATABASE_API_KEY: THE_OPEN_MOVIE_DATABASE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: the-open-movie-database-search
+    baseUri: https://www.omdbapi.com
+    description: The Open Movie Database API — Search business capability. Self-contained, no shared references.
+    resources:
+    - name: search
+      path: /search
+      operations:
+      - name: searchmovies
+        method: GET
+        description: Search Movies By Title
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: apikey
+          in: query
+          type: string
+          description: Your OMDb API key.
+          required: true
+        - name: s
+          in: query
+          type: string
+          description: Search term — movie title or partial title to search for.
+          required: true
+        - name: type
+          in: query
+          type: string
+          description: 'Filter by type: movie, series, or episode.'
+        - name: y
+          in: query
+          type: integer
+          description: Year of release filter.
+        - name: page
+          in: query
+          type: integer
+          description: Page number for pagination (1-100, default 1). Each page contains up to 10 results.
+        - name: r
+          in: query
+          type: string
+          description: 'Response format: json (default) or xml.'
+        - name: callback
+          in: query
+          type: string
+          description: JSONP callback function name.
+    authentication:
+      type: apikey
+      key: apikey
+      value: '{{env.THE_OPEN_MOVIE_DATABASE_API_KEY}}'
+      placement: query
+  exposes:
+  - type: rest
+    namespace: the-open-movie-database-search-rest
+    port: 8080
+    description: REST adapter for The Open Movie Database API — Search. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/search
+      name: search
+      description: REST surface for search.
+      operations:
+      - method: GET
+        name: searchmovies
+        description: Search Movies By Title
+        call: the-open-movie-database-search.searchmovies
+        with:
+          apikey: rest.apikey
+          s: rest.s
+          type: rest.type
+          y: rest.y
+          page: rest.page
+          r: rest.r
+          callback: rest.callback
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: the-open-movie-database-search-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for The Open Movie Database API — Search. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: search-movies-title
+      description: Search Movies By Title
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: the-open-movie-database-search.searchmovies
+      with:
+        apikey: tools.apikey
+        s: tools.s
+        type: tools.type
+        y: tools.y
+        page: tools.page
+        r: tools.r
+        callback: tools.callback
+      outputParameters:
+      - type: object
+        mapping: $.
