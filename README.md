@@ -1,114 +1,69 @@
-# The Open Movie Database
+# The Open Movie Database (the-open-movie-database)
 
 The OMDb API is a RESTful web service to obtain movie, series, and episode information. All content and images on the site are contributed and maintained by users. Access movie and TV metadata including title, year, genre, director, cast, plot, ratings, and IMDb data. Search by title or look up by IMDb ID. Requires a free API key obtained at omdbapi.com/apikey.aspx.
 
-**Website:** [omdbapi.com](https://www.omdbapi.com/)  
-**Documentation:** [omdbapi.com](https://www.omdbapi.com/)  
-**Sign Up:** [omdbapi.com/apikey.aspx](https://www.omdbapi.com/apikey.aspx)
+**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/the-open-movie-database/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/the-open-movie-database/refs/heads/main/apis.yml)
 
----
+## Scope
+
+- **Type:** Index
+- **Position:** Consumer
+- **Access:** 3rd-Party
+
+## Tags
+
+- Entertainment
+- Movies
+- Television
+- IMDb
+- Metadata
+
+## Timestamps
+
+- **Created:** 2025-03-01
+- **Modified:** 2026-05-19
 
 ## APIs
 
-| API | Description | Base URL |
-|-----|-------------|----------|
-| [The Open Movie Database API](https://www.omdbapi.com/) | Movie, series, and episode metadata by IMDb ID or title | `https://www.omdbapi.com` |
+### The Open Movie Database API
 
----
+The OMDb API is a RESTful web service to obtain movie, series, and episode information. Search by title or look up by IMDb ID. Returns detailed metadata including ratings from IMDb, Rotten Tomatoes, and Metacritic.
 
-## OpenAPI Specifications
+- **Human URL:** [https://www.omdbapi.com/](https://www.omdbapi.com/)
+- **Base URL:** `https://www.omdbapi.com`
 
-| Spec | File |
-|------|------|
-| The Open Movie Database API | [openapi/the-open-movie-database-openapi.yml](openapi/the-open-movie-database-openapi.yml) |
+#### Tags
 
-**Endpoints:**
-- `GET /` — Get movie or series by IMDb ID (`i`) or title (`t`)
-- `GET /search` — Search movies and series by title keyword (`s`)
+- Entertainment
+- Movies
+- Television
+- IMDb
+- Metadata
 
----
+#### Properties
 
-## Naftiko Capabilities
+- [Documentation](https://www.omdbapi.com/)
+- [OpenAPI](openapi/the-open-movie-database-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/the-open-movie-database.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/the-open-movie-database.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Sign Up](https://www.omdbapi.com/apikey.aspx)
+- [Spectral  Rules](rules/the-open-movie-database-rules.yml)
+- [Naftiko  Shared](capabilities/shared/the-open-movie-database.yaml)
+- [J S O N  Schema](json-schema/the-open-movie-database-movie-schema.json)
+- [J S O N  Structure](json-structure/the-open-movie-database-movie-structure.json)
+- [JSON-LD](json-ld/the-open-movie-database-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
+- [Example](examples/the-open-movie-database-get-movie-example.json)
+- [Vocabulary](vocabulary/the-open-movie-database-vocabulary.yml)
 
-### Workflow Capabilities
+## Common Properties
 
-| Workflow | File | Description |
-|----------|------|-------------|
-| Movie Lookup | [capabilities/movie-lookup.yaml](capabilities/movie-lookup.yaml) | Search and retrieve movie, series, and episode metadata |
-
-### Shared Per-API Definitions
-
-| API | File |
-|-----|------|
-| The Open Movie Database API | [capabilities/shared/the-open-movie-database.yaml](capabilities/shared/the-open-movie-database.yaml) |
-
----
-
-## Spectral Rules
-
-| Ruleset | File |
-|---------|------|
-| OMDb API Rules | [rules/the-open-movie-database-rules.yml](rules/the-open-movie-database-rules.yml) |
-
----
-
-## JSON Schemas
-
-| Schema | File |
-|--------|------|
-| Movie | [json-schema/the-open-movie-database-movie-schema.json](json-schema/the-open-movie-database-movie-schema.json) |
-
----
-
-## JSON Structure
-
-| Structure | File |
-|-----------|------|
-| Movie | [json-structure/the-open-movie-database-movie-structure.json](json-structure/the-open-movie-database-movie-structure.json) |
-
----
-
-## JSON-LD
-
-| Context | File |
-|---------|------|
-| OMDb Context | [json-ld/the-open-movie-database-context.jsonld](json-ld/the-open-movie-database-context.jsonld) |
-
----
-
-## Examples
-
-| Example | File |
-|---------|------|
-| Get Movie By IMDb ID | [examples/the-open-movie-database-get-movie-example.json](examples/the-open-movie-database-get-movie-example.json) |
-
----
-
-## Vocabulary
-
-| Vocabulary | File |
-|------------|------|
-| OMDb Vocabulary | [vocabulary/the-open-movie-database-vocabulary.yml](vocabulary/the-open-movie-database-vocabulary.yml) |
-
----
-
-## Authentication
-
-Pass your API key as a query parameter on every request:
-
-```
-?apikey=YOUR_API_KEY
-```
-
-Obtain a free key at [omdbapi.com/apikey.aspx](https://www.omdbapi.com/apikey.aspx).
-
----
+- [GitHub Organization](https://github.com/omdbapi)
+- [Website](https://www.omdbapi.com/)
+- [Documentation](https://www.omdbapi.com/)
+- [Sign Up](https://www.omdbapi.com/apikey.aspx)
+- [Terms of Service](https://www.omdbapi.com/legal.htm)
 
 ## Maintainers
 
-**FN:** Kin Lane  
+**FN:** Kin Lane
 **Email:** kin@apievangelist.com
-
----
-
-*Profile generated 2026-05-03*
