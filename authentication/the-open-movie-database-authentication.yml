@@ -1,0 +1,15 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/the-open-movie-database-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - query
+schemes:
+- name: apiKey
+  type: apiKey
+  in: query
+  parameter: apikey
+  sources:
+  - openapi/the-open-movie-database-openapi.yml

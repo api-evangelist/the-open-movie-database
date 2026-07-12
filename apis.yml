@@ -55,6 +55,10 @@ apis:
       - type: Vocabulary
         url: vocabulary/the-open-movie-database-vocabulary.yml
 common:
+  - type: DomainSecurity
+    url: security/the-open-movie-database-domain-security.yml
+  - type: Authentication
+    url: authentication/the-open-movie-database-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/omdbapi
   - type: Website
