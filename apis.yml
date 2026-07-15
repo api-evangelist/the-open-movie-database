@@ -55,6 +55,8 @@ apis:
       - type: Vocabulary
         url: vocabulary/the-open-movie-database-vocabulary.yml
 common:
+  - type: AgenticAccess
+    url: agentic-access/the-open-movie-database-agentic-access.yml
   - type: DomainSecurity
     url: security/the-open-movie-database-domain-security.yml
   - type: Authentication
