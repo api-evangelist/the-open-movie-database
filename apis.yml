@@ -6,9 +6,22 @@ description: >-
   cast, plot, ratings, and IMDb data. Search by title or look up by IMDb ID. Requires a free API key obtained at
   omdbapi.com/apikey.aspx.
 type: Index
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/the-open-movie-database.png
 tags:
   - Entertainment
   - Movies
@@ -20,40 +33,62 @@ modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/the-open-movie-database/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
-  - aid: the-open-movie-database:the-open-movie-database
-    name: The Open Movie Database API
-    description: >-
-      The OMDb API is a RESTful web service to obtain movie, series, and episode information. Search by title or look up
-      by IMDb ID. Returns detailed metadata including ratings from IMDb, Rotten Tomatoes, and Metacritic.
-    humanURL: https://www.omdbapi.com/
-    baseURL: https://www.omdbapi.com
-    tags:
-      - Entertainment
-      - Movies
-      - Television
-      - IMDb
-      - Metadata
-    properties:
-      - type: Documentation
-        url: https://www.omdbapi.com/
-      - type: OpenAPI
-        url: openapi/the-open-movie-database-openapi.yml
-      - type: Signup
-        url: https://www.omdbapi.com/apikey.aspx
-      - type: SpectralRules
-        url: rules/the-open-movie-database-rules.yml
-      - type: X-NaftikoShared
-        url: capabilities/shared/the-open-movie-database.yaml
-      - type: JSONSchema
-        url: json-schema/the-open-movie-database-movie-schema.json
-      - type: JSONStructure
-        url: json-structure/the-open-movie-database-movie-structure.json
-      - type: JSONLD
-        url: json-ld/the-open-movie-database-context.jsonld
-      - type: Examples
-        url: examples/the-open-movie-database-get-movie-example.json
-      - type: Vocabulary
-        url: vocabulary/the-open-movie-database-vocabulary.yml
+- aid: the-open-movie-database:the-open-movie-database-movies-api
+  name: The Open Movie Database Movies API
+  description: Retrieve movie, series, and episode details by ID or title.
+  humanURL: https://www.omdbapi.com/
+  baseURL: https://www.omdbapi.com
+  tags:
+  - Movies
+  properties:
+  - type: OpenAPI
+    url: openapi/the-open-movie-database-movies-api-openapi.yml
+  - type: Documentation
+    url: https://www.omdbapi.com/
+  - type: Signup
+    url: https://www.omdbapi.com/apikey.aspx
+  - type: SpectralRules
+    url: rules/the-open-movie-database-rules.yml
+  - type: X-NaftikoShared
+    url: capabilities/shared/the-open-movie-database.yaml
+  - type: JSONSchema
+    url: json-schema/the-open-movie-database-movie-schema.json
+  - type: JSONStructure
+    url: json-structure/the-open-movie-database-movie-structure.json
+  - type: JSONLD
+    url: json-ld/the-open-movie-database-context.jsonld
+  - type: Examples
+    url: examples/the-open-movie-database-get-movie-example.json
+  - type: Vocabulary
+    url: vocabulary/the-open-movie-database-vocabulary.yml
+- aid: the-open-movie-database:the-open-movie-database-search-api
+  name: The Open Movie Database Search API
+  description: Search for movies and series by title.
+  humanURL: https://www.omdbapi.com/
+  baseURL: https://www.omdbapi.com
+  tags:
+  - Search
+  properties:
+  - type: OpenAPI
+    url: openapi/the-open-movie-database-search-api-openapi.yml
+  - type: Documentation
+    url: https://www.omdbapi.com/
+  - type: Signup
+    url: https://www.omdbapi.com/apikey.aspx
+  - type: SpectralRules
+    url: rules/the-open-movie-database-rules.yml
+  - type: X-NaftikoShared
+    url: capabilities/shared/the-open-movie-database.yaml
+  - type: JSONSchema
+    url: json-schema/the-open-movie-database-movie-schema.json
+  - type: JSONStructure
+    url: json-structure/the-open-movie-database-movie-structure.json
+  - type: JSONLD
+    url: json-ld/the-open-movie-database-context.jsonld
+  - type: Examples
+    url: examples/the-open-movie-database-get-movie-example.json
+  - type: Vocabulary
+    url: vocabulary/the-open-movie-database-vocabulary.yml
 common:
   - type: AgenticAccess
     url: agentic-access/the-open-movie-database-agentic-access.yml
