@@ -1,0 +1,16 @@
+{
+  "provider": "the-open-movie-database",
+  "sources": [
+    "the-open-movie-database-movies-api-openapi.yml",
+    "the-open-movie-database-search-api-openapi.yml"
+  ],
+  "outputs": [
+    "the-open-movie-database-movies-api-openapi.yml",
+    "the-open-movie-database-search-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
