@@ -49,8 +49,6 @@ apis:
     url: https://www.omdbapi.com/apikey.aspx
   - type: SpectralRules
     url: rules/the-open-movie-database-rules.yml
-  - type: X-NaftikoShared
-    url: capabilities/shared/the-open-movie-database.yaml
   - type: JSONSchema
     url: json-schema/the-open-movie-database-movie-schema.json
   - type: JSONStructure
@@ -77,8 +75,6 @@ apis:
     url: https://www.omdbapi.com/apikey.aspx
   - type: SpectralRules
     url: rules/the-open-movie-database-rules.yml
-  - type: X-NaftikoShared
-    url: capabilities/shared/the-open-movie-database.yaml
   - type: JSONSchema
     url: json-schema/the-open-movie-database-movie-schema.json
   - type: JSONStructure
