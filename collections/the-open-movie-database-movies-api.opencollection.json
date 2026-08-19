@@ -1,0 +1,105 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "The Open Movie Database Movies API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "apikey",
+      "value": "{{apikey}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Movies",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Movie By Title Or IMDb ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.omdbapi.com/",
+            "params": [
+              {
+                "name": "apikey",
+                "value": "",
+                "type": "query",
+                "description": "Your OMDb API key."
+              },
+              {
+                "name": "i",
+                "value": "",
+                "type": "query",
+                "description": "A valid IMDb ID (e.g., tt1285016). Required if 't' is not provided."
+              },
+              {
+                "name": "t",
+                "value": "",
+                "type": "query",
+                "description": "Movie or series title to retrieve. Required if 'i' is not provided."
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Type of result to return: movie, series, or episode."
+              },
+              {
+                "name": "y",
+                "value": "",
+                "type": "query",
+                "description": "Year of release."
+              },
+              {
+                "name": "plot",
+                "value": "",
+                "type": "query",
+                "description": "Return short or full plot. Values: short (default), full."
+              },
+              {
+                "name": "r",
+                "value": "",
+                "type": "query",
+                "description": "Response format. Values: json (default), xml."
+              },
+              {
+                "name": "callback",
+                "value": "",
+                "type": "query",
+                "description": "JSONP callback function name."
+              },
+              {
+                "name": "v",
+                "value": "",
+                "type": "query",
+                "description": "API version (default 1)."
+              },
+              {
+                "name": "Season",
+                "value": "",
+                "type": "query",
+                "description": "Season number (integer). Used to retrieve a specific TV season."
+              },
+              {
+                "name": "Episode",
+                "value": "",
+                "type": "query",
+                "description": "Episode number (integer). Used with Season to retrieve a specific episode."
+              }
+            ]
+          },
+          "docs": "Retrieve detailed information about a single movie, TV series, or episode by IMDb ID or title. At least one of the 'i' (IMDb ID) or 't' (title) parameters is required."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

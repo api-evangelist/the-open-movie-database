@@ -1,0 +1,319 @@
+{
+  "item": [
+    {
+      "id": "0de3bcbc-3509-44d1-9723-68f2266452b3",
+      "name": "Movies",
+      "description": {
+        "content": "Retrieve movie, series, and episode details by ID or title.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9f9d07de-a095-4bc5-b5b6-70dccdd0edcc",
+          "name": "Get Movie By Title Or IMDb ID",
+          "request": {
+            "name": "Get Movie By Title Or IMDb ID",
+            "description": {
+              "content": "Retrieve detailed information about a single movie, TV series, or episode by IMDb ID or title. At least one of the 'i' (IMDb ID) or 't' (title) parameters is required.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "apikey",
+                  "value": "<string>",
+                  "description": "(Required) Your OMDb API key."
+                },
+                {
+                  "disabled": false,
+                  "key": "i",
+                  "value": "<string>",
+                  "description": "A valid IMDb ID (e.g., tt1285016). Required if 't' is not provided."
+                },
+                {
+                  "disabled": false,
+                  "key": "t",
+                  "value": "<string>",
+                  "description": "Movie or series title to retrieve. Required if 'i' is not provided."
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>",
+                  "description": "Type of result to return: movie, series, or episode."
+                },
+                {
+                  "disabled": false,
+                  "key": "y",
+                  "value": "<integer>",
+                  "description": "Year of release."
+                },
+                {
+                  "disabled": false,
+                  "key": "plot",
+                  "value": "short",
+                  "description": "Return short or full plot. Values: short (default), full."
+                },
+                {
+                  "disabled": false,
+                  "key": "r",
+                  "value": "json",
+                  "description": "Response format. Values: json (default), xml."
+                },
+                {
+                  "disabled": false,
+                  "key": "callback",
+                  "value": "<string>",
+                  "description": "JSONP callback function name."
+                },
+                {
+                  "disabled": false,
+                  "key": "v",
+                  "value": "1",
+                  "description": "API version (default 1)."
+                },
+                {
+                  "disabled": false,
+                  "key": "Season",
+                  "value": "<integer>",
+                  "description": "Season number (integer). Used to retrieve a specific TV season."
+                },
+                {
+                  "disabled": false,
+                  "key": "Episode",
+                  "value": "<integer>",
+                  "description": "Episode number (integer). Used with Season to retrieve a specific episode."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2ac2e233-c54b-42d5-b8fd-69797966ae0c",
+              "name": "Movie, series, or episode details.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "i",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "t",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "y",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "plot",
+                      "value": "short"
+                    },
+                    {
+                      "key": "r",
+                      "value": "json"
+                    },
+                    {
+                      "key": "callback",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "v",
+                      "value": "1"
+                    },
+                    {
+                      "key": "Season",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "Episode",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Title\": \"string\",\n  \"imdbID\": \"string\",\n  \"Response\": \"False\",\n  \"Year\": \"string\",\n  \"Rated\": \"string\",\n  \"Released\": \"string\",\n  \"Runtime\": \"string\",\n  \"Genre\": \"string\",\n  \"Director\": \"string\",\n  \"Writer\": \"string\",\n  \"Actors\": \"string\",\n  \"Plot\": \"string\",\n  \"Language\": \"string\",\n  \"Country\": \"string\",\n  \"Awards\": \"string\",\n  \"Poster\": \"string\",\n  \"Ratings\": [\n    {\n      \"Source\": \"string\",\n      \"Value\": \"string\"\n    },\n    {\n      \"Source\": \"string\",\n      \"Value\": \"string\"\n    }\n  ],\n  \"Metascore\": \"string\",\n  \"imdbRating\": \"string\",\n  \"imdbVotes\": \"string\",\n  \"Type\": \"string\",\n  \"DVD\": \"string\",\n  \"BoxOffice\": \"string\",\n  \"Production\": \"string\",\n  \"Website\": \"string\",\n  \"totalSeasons\": \"string\",\n  \"seriesID\": \"string\",\n  \"Season\": \"string\",\n  \"Episode\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "88d0d14c-76ad-4011-824e-cad202e4a2be",
+              "name": "Unauthorized — invalid or missing API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "apikey",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "i",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "t",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "y",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "plot",
+                      "value": "short"
+                    },
+                    {
+                      "key": "r",
+                      "value": "json"
+                    },
+                    {
+                      "key": "callback",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "v",
+                      "value": "1"
+                    },
+                    {
+                      "key": "Season",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "Episode",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "apikey",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Response\": \"False\",\n  \"Error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.omdbapi.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a39ebcd3-6443-469a-8967-02eae03f22fe",
+    "name": "The Open Movie Database Movies API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The OMDb API is a RESTful web service to obtain movie, series, and episode information. All content and images on the site are contributed and maintained by users. Access movie and TV metadata including title, year, genre, director, cast, plot, ratings, and IMDb data. Search by title or look up by IMDb ID. Requires a free API key obtained at omdbapi.com/apikey.aspx.",
+      "type": "text/plain"
+    }
+  }
+}
