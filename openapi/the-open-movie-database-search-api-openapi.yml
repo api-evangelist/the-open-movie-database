@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: The Open Movie Database Movies Search API
+  title: Open Movie Database Search API
   description: The OMDb API is a RESTful web service to obtain movie, series, and episode information. All content and images on the site are contributed and maintained by users. Access movie and TV metadata including title, year, genre, director, cast, plot, ratings, and IMDb data. Search by title or look up by IMDb ID. Requires a free API key obtained at omdbapi.com/apikey.aspx.
   version: 1.0.0
   contact:
@@ -90,13 +90,6 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 components:
-  responses:
-    Unauthorized:
-      description: Unauthorized — invalid or missing API key.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
   schemas:
     SearchResult:
       type: object
@@ -147,6 +140,13 @@ components:
           enum:
           - 'True'
           - 'False'
+  responses:
+    Unauthorized:
+      description: Unauthorized — invalid or missing API key.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
   securitySchemes:
     apiKey:
       type: apiKey

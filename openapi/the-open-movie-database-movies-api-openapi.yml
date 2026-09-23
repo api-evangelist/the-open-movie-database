@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: The Open Movie Database Movies API
+  title: Open Movie Database Movies API
   description: The OMDb API is a RESTful web service to obtain movie, series, and episode information. All content and images on the site are contributed and maintained by users. Access movie and TV metadata including title, year, genre, director, cast, plot, ratings, and IMDb data. Search by title or look up by IMDb ID. Requires a free API key obtained at omdbapi.com/apikey.aspx.
   version: 1.0.0
   contact:
@@ -119,16 +119,6 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
-    Rating:
-      type: object
-      description: A rating from a specific source.
-      properties:
-        Source:
-          type: string
-          description: Rating source name (e.g., Internet Movie Database, Rotten Tomatoes, Metacritic).
-        Value:
-          type: string
-          description: Rating value (e.g., 8.5/10, 92%, 75/100).
     ErrorResponse:
       type: object
       description: Error response when the request fails.
@@ -141,46 +131,16 @@ components:
         Error:
           type: string
           description: Error message describing what went wrong.
-    Season:
+    Rating:
       type: object
-      description: Season listing for a TV series.
+      description: A rating from a specific source.
       properties:
-        Title:
+        Source:
           type: string
-          description: Series title.
-        Season:
+          description: Rating source name (e.g., Internet Movie Database, Rotten Tomatoes, Metacritic).
+        Value:
           type: string
-          description: Season number.
-        totalSeasons:
-          type: string
-          description: Total seasons in the series.
-        Episodes:
-          type: array
-          items:
-            $ref: '#/components/schemas/EpisodeRef'
-          description: List of episodes in the season.
-        Response:
-          type: string
-          description: Response status.
-    EpisodeRef:
-      type: object
-      description: Episode reference in a season listing.
-      properties:
-        Title:
-          type: string
-          description: Episode title.
-        Released:
-          type: string
-          description: Episode air date.
-        Episode:
-          type: string
-          description: Episode number within the season.
-        imdbRating:
-          type: string
-          description: IMDb rating.
-        imdbID:
-          type: string
-          description: Episode IMDb ID.
+          description: Rating value (e.g., 8.5/10, 92%, 75/100).
     Movie:
       type: object
       description: Detailed information about a movie, TV series, or episode.
@@ -281,6 +241,46 @@ components:
       - Title
       - imdbID
       - Response
+    EpisodeRef:
+      type: object
+      description: Episode reference in a season listing.
+      properties:
+        Title:
+          type: string
+          description: Episode title.
+        Released:
+          type: string
+          description: Episode air date.
+        Episode:
+          type: string
+          description: Episode number within the season.
+        imdbRating:
+          type: string
+          description: IMDb rating.
+        imdbID:
+          type: string
+          description: Episode IMDb ID.
+    Season:
+      type: object
+      description: Season listing for a TV series.
+      properties:
+        Title:
+          type: string
+          description: Series title.
+        Season:
+          type: string
+          description: Season number.
+        totalSeasons:
+          type: string
+          description: Total seasons in the series.
+        Episodes:
+          type: array
+          items:
+            $ref: '#/components/schemas/EpisodeRef'
+          description: List of episodes in the season.
+        Response:
+          type: string
+          description: Response status.
   responses:
     Unauthorized:
       description: Unauthorized — invalid or missing API key.

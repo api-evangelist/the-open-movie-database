@@ -1,8 +1,7 @@
 {
   "provider": "the-open-movie-database",
   "sources": [
-    "the-open-movie-database-movies-api-openapi.yml",
-    "the-open-movie-database-search-api-openapi.yml"
+    "_original/the-open-movie-database-openapi.yml"
   ],
   "outputs": [
     "the-open-movie-database-movies-api-openapi.yml",
@@ -11,6 +10,13 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "the-open-movie-database-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "the-open-movie-database-movies-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "the-open-movie-database-search-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
