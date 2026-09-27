@@ -91,6 +91,18 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
+    ErrorResponse:
+      type: object
+      description: Error response when the request fails.
+      properties:
+        Response:
+          type: string
+          description: Always False for errors.
+          enum:
+          - 'False'
+        Error:
+          type: string
+          description: Error message describing what went wrong.
     SearchResult:
       type: object
       description: A search result item (abbreviated movie/series data).
@@ -110,18 +122,6 @@ components:
         Poster:
           type: string
           description: URL to the poster image or N/A.
-    ErrorResponse:
-      type: object
-      description: Error response when the request fails.
-      properties:
-        Response:
-          type: string
-          description: Always False for errors.
-          enum:
-          - 'False'
-        Error:
-          type: string
-          description: Error message describing what went wrong.
     SearchResponse:
       type: object
       description: Paginated search results.

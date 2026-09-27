@@ -131,16 +131,6 @@ components:
         Error:
           type: string
           description: Error message describing what went wrong.
-    Rating:
-      type: object
-      description: A rating from a specific source.
-      properties:
-        Source:
-          type: string
-          description: Rating source name (e.g., Internet Movie Database, Rotten Tomatoes, Metacritic).
-        Value:
-          type: string
-          description: Rating value (e.g., 8.5/10, 92%, 75/100).
     Movie:
       type: object
       description: Detailed information about a movie, TV series, or episode.
@@ -260,6 +250,16 @@ components:
         imdbID:
           type: string
           description: Episode IMDb ID.
+    Rating:
+      type: object
+      description: A rating from a specific source.
+      properties:
+        Source:
+          type: string
+          description: Rating source name (e.g., Internet Movie Database, Rotten Tomatoes, Metacritic).
+        Value:
+          type: string
+          description: Rating value (e.g., 8.5/10, 92%, 75/100).
     Season:
       type: object
       description: Season listing for a TV series.
